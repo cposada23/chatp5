@@ -2,6 +2,7 @@
 
 (function () {
     /*global angular*/
+    /*global io*/
     angular.module('chat',['ui.router', 'angular-p5']).factory('socket', socket).factory('exampleSketch', exampleSketch);
     socket.$inject = ['$rootScope']
     
@@ -41,32 +42,33 @@
         var g = p.random(0, 255);
         var b = p.random(0,255);
         
-        var angle = 0;
+      
         p.setup = function() {
           p.createCanvas(480, 270);
           p.background(51);
+          
           socket.on('mouse', p.newDrawing);
         };
     
         p.newDrawing = function (data) {
             
-    	  p.noStroke();
-    	  p.fill(data.r, data.g ,data.b);
-    	  p.ellipse(data.x, data.y, 20, 20);
-    
+      	  p.noStroke();
+      	  p.fill(data.r, data.g ,data.b);
+      	  p.ellipse(data.x, data.y, 20, 20);
+      
     
         }
         
         p.mouseDragged = function () {
           
           var data = {
-    		x:p.mouseX,
-    		y:p.mouseY,
-    		r:r,
-    		g:g,
-    		b:b
-    	  }
-    	  socket.emit('mouse',data)
+        		x:p.mouseX,
+        		y:p.mouseY,
+        		r:r,
+        		g:g,
+        		b:b
+      	  }
+      	  socket.emit('mouse',data)
           p.noStroke();
           p.fill(r,g,b);
           p.ellipse(p.mouseX, p.mouseY, 20, 20);
@@ -84,6 +86,6 @@
         };
       };
     
-        }
+    }
     
 }());

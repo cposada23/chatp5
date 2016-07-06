@@ -1,0 +1,28 @@
+{
+  "name": "test-chat",
+  "description": "test chat socket io angular",
+  "main": "servidor/app.js",
+  "authors": [
+    "Camilo Posada Angel"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "node",
+    "angular",
+    "socketio"
+  ],
+  "homepage": "later",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "ui-router#^0.3.1"
+  }
+}

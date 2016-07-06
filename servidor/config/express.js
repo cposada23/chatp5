@@ -15,6 +15,8 @@ module.exports = function  (app) {
 	app.use(bodyParser.urlencoded({extended:false}));
 	app.use(bodyParser.json());
 	app.use('/cliente',express.static(path.join(config.root, '/cliente')));
+	//bower_components/bootstrap/dist/css/bootstrap.min.css 
+	app.use('/bower_components', express.static(path.join(config.root, '/bower_components')));
 	app.set('appPath', 'cliente');
 	app.use(morgan('dev'));
 	app.use(errorHandler());

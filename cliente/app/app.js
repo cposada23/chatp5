@@ -52,7 +52,7 @@
             
     	  p.noStroke();
     	  p.fill(data.r, data.g ,data.b);
-    	  p.ellipse(data.x, data.y, 36, 36);
+    	  p.ellipse(data.x, data.y, 20, 20);
     
     
         }
@@ -69,7 +69,7 @@
     	  socket.emit('mouse',data)
           p.noStroke();
           p.fill(r,g,b);
-          p.ellipse(p.mouseX, p.mouseY, 36, 36);
+          p.ellipse(p.mouseX, p.mouseY, 20, 20);
           console.log(p.mouseX+','+ p.mouseY);
         }
     

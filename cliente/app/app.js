@@ -39,6 +39,7 @@
       return function(p) {
         var r = p.random(0, 255);
         var g = p.random(0, 255);
+        var b = p.random(0,255);
         
         var angle = 0;
         p.setup = function() {
@@ -50,7 +51,7 @@
         p.newDrawing = function (data) {
             
     	  p.noStroke();
-    	  p.fill(255, 0 ,100);
+    	  p.fill(data.r, data.g ,data.b);
     	  p.ellipse(data.x, data.y, 36, 36);
     
     
@@ -60,11 +61,14 @@
           
           var data = {
     		x:p.mouseX,
-    		y:p.mouseY
+    		y:p.mouseY,
+    		r:r,
+    		g:g,
+    		b:b
     	  }
     	  socket.emit('mouse',data)
           p.noStroke();
-          p.fill(255,100,200);
+          p.fill(r,g,b);
           p.ellipse(p.mouseX, p.mouseY, 36, 36);
           console.log(p.mouseX+','+ p.mouseY);
         }

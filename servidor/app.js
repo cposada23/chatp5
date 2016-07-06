@@ -1,9 +1,6 @@
 var config = require('./config/environment');
 
 var express = require('express');
-var path = require('path');
-
-var async = require('async');
 var socketio = require('socket.io');
 var app = express();
 var server = require('http').createServer(app);
